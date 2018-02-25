@@ -76,7 +76,7 @@ module.exports = (robot) => {
 
     if (replyInPrivate && msg.message && msg.message.user && msg.message.user.name && msg.message.user.name !== msg.message.room) {
       msg.reply('replied to you in private!')
-      return robot.send({ room: msg.message.user.name }, emit)
+      return robot.send({ room: msg.message.user.id }, emit)
     } else {
       return msg.send(emit)
     }
